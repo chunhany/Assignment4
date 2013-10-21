@@ -1,0 +1,103 @@
+@font: Varela Round, arial, sans-serif;
+@font-size: 1.6 rem;
+@shadow:0 2px 0 rgba(255,255,255, 0.8);
+@opac: 0.4;
+@margin: 10%;
+
+a{
+font-family: @font;
+font-size: 12px;
+line-height: 0.6em;
+text-transform: uppercase;
+letter-spacing: 2px;
+font-weight: normal;
+text-decoration: none;
+color: #FFFF00;
+}
+
+.information {
+text-align:center; 
+font-family: @font;
+font-size: 15px;
+letter-spacing: 3 px;
+font-weight: normal;
+font-style: normal;
+}
+
+ul.nav  {
+text-transform:uppercase;
+text-align:center;
+padding: 2em 0.5em 3em;
+list-style-type:none;
+margin: 10%;
+padding:0;
+}
+
+li.map{
+padding: 20px;
+display:inline;
+letter-spacing: 10 px;
+}
+
+.navigation-bar{
+float:left;
+width:100%;
+}
+
+a.instagram:hover{
+opacity: @opac;
+}
+
+li.map:hover {
+opacity: 0.4;
+text-decoration: underline;
+}
+
+.mixin (@a) when (lightness(@a) >= 50%) {
+  background-color: black;
+}
+.mixin (@a) when (lightness(@a) < 50%) {
+  background-color: white;
+}
+.mixin (@a) {
+  color: @a;
+}
+
+.body1{
+.mixin(white)
+}
+
+.body2{
+.mixin(black)
+}
+
+div.upper-logo{
+text-align: center;
+}
+
+div.trick{
+text-align: center;
+}
+
+.setMargin (@margin){
+margin-bottom: @margin;
+}
+
+.food-list {
+	.setMargin(100px);
+}
+
+.home-div {
+margin:  @margin;
+padding: @margin;
+}
+
+.home{
+.information;
+font-size: 20px;
+}
+
+.footer-note{
+text-align: center;
+margin: 10%;
+}

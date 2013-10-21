@@ -1,0 +1,72 @@
+*{margin:0; padding:0;}
+
+h2 {
+	line-height: 28px;
+	font-family: Helvetica, sans-serif;
+	margin-bottom: 20px;
+}
+
+#header {
+	height: 25px;
+	text-align: center;
+	font: 12px/25px Helvetica, sans-serif;
+	background: #eee;
+}
+
+.setWrapperWidth (@wrapperWidth: 90%) {
+	width: @wrapperWidth;
+}
+
+.setColumnWidth (@columns: 4, @margin: 6%) {
+	@totalMargin: (@columns - 1)*@margin;
+	@columnWidth: (100% - @totalMargin)/@columns;
+	width: @columnWidth;
+	margin-left: @margin;
+}
+
+.setBigColumnWidth (@columns: 4, @margin: 4%, @combine: 2) {
+	@totalMargin: (@columns - 1)*@margin;
+	@columnWidth: (100% - @totalMargin)/@columns;
+	@wideColumn: (@columnWidth * @combine) + (@margin * (@combine - 1));
+	width: @wideColumn;
+	margin-left: @margin;
+}
+
+
+#main, #second, #third, #fourth {
+	overflow: hidden;
+	margin: 20px auto;
+	.setWrapperWidth(70%);
+}
+
+.col4 {
+	float: left;
+	.setColumnWidth(4, 4%);
+}
+
+.col3 {
+	float: left;
+	.setColumnWidth(3, 4%);
+}
+
+.colx2 {
+	float: left;
+	.setBigColumnWidth(4, 4%);
+}
+
+.colx3 {
+	float: left;
+	.setBigColumnWidth(4, 4%, 3);
+}
+
+.first {
+	margin-left: 0;
+}
+
+
+@media only screen
+and (max-width : 700px) {
+	.col4, .col3, .colx2, .colx3, {width: 100%; margin-left: 0;}
+	p {margin-bottom: 20px;}
+	
+}
